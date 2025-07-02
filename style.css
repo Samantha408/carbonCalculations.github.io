@@ -12,6 +12,7 @@
 .dropdown a {
   display: block;
   color: black;
+  font-family: "Helvetica", sans-serif;
   text-decoration: none;
   padding: 10px 15px;
 }
@@ -34,4 +35,5 @@
 .dropdown a.selected {
   background-color: hsl(0, 0%, 85%);
   font-weight: bold;
+  font-family: "Helvetica", sans-serif;
 }
