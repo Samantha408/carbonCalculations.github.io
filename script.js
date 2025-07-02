@@ -1,25 +1,18 @@
 <script>
-  const emissionFactors = {
-    PET: 1.91,
-    HDPE: 1.42,
-    PVC: 2.68,
-    LDPE: 1.81,
-    PP: 1.25
-  };
+const PETw = 100;
+const PETef = 1.91;
 
-  function calculateEmissions() {
-    const type = document.getElementById("plasticType").value;
-    const weight = parseFloat(document.getElementById("weight").value);
-    const result = document.getElementById("result");
+const HDPEw = null;
+const HDPEef = 1.75;
 
-    if (!type || isNaN(weight)) {
-      result.textContent = "Please select a plastic type and enter a valid weight.";
-      return;
-    }
+const LDPEw = null;
+const LDPEef = 1.5;
 
-    const emissionFactor = emissionFactors[type];
-    const emissions = weight * emissionFactor;
+const PPw = null;
+const PPef = 1.6;
 
-    result.textContent = `Estimated carbon emissions for ${weight} kg of ${type}: ${emissions.toFixed(2)} kg CO₂e`;
-  }
+const PVCw = null;
+const PVCef = 2.0;
+
+  
 </script>
