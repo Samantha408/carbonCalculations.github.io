@@ -1,33 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carbon Emission Calculator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Carbon Emission Calculator</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="dropdown">
-    <button>Select the type of plastic</button>
+  <div class="dropdown">
+    <button id="dropdownButton">Please select the type of plastic</button>
     <div class="content">
-        <a href="#" data-type="PET">PET</a>
-        <a href="#" data-type="HDPE">HDPE</a>
-        <a href="#" data-type="LDPE">LDPE</a>
-        <a href="#" data-type="PP">PP</a>
-        <a href="#" data-type="PVC">PVC</a>
+      <a href="#" data-type="PET">PET</a>
+      <a href="#" data-type="HDPE">HDPE</a>
+      <a href="#" data-type="LDPE">LDPE</a>
+      <a href="#" data-type="PP">PP</a>
+      <a href="#" data-type="PVC">PVC</a>
     </div>
-</div>
+  </div>
 
-<p id="selectedType"><strong>Selected type:</strong> None</p>
+  <p id="selectedType">Selected type: None</p>
 
-<label for="volume">Annual number of units:</label>
-<input type="number" id="volume">
+  <label for="volume">Annual number of units:</label>
+  <input type="number" id="volume">
 
-<button onclick="calculateEmissions()">Calculate Emissions</button>
+  <button id="calcBtn">Calculate Emissions</button>
 
-<p id="result"></p>
-<script src="script.js"></script>
+  <p id="result"></p>
+
+  <script src="script.js"></script>
 </body>
 </html>
