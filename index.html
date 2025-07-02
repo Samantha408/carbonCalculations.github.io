@@ -7,29 +7,34 @@
 </head>
 <body>
 
-  <label for="plasticType">Choose a plastic type:</label>
-<select id="plasticType">
-  <option value="">--Select--</option>
-  <option value="PET">PET</option>
-  <option value="HDPE">HDPE</option>
-  <option value="PVC">PVC</option>
-  <option value="LDPE">LDPE</option>
-  <option value="PP">PP</option>
-</select>
+  <div class="dropdown">
+  <button id="dropdownButton">Please select the type of plastic</button>
+  <div class="content">
+    <a href="#" data-type="PET">PET</a>
+    <a href="#" data-type="HDPE">HDPE</a>
+    <a href="#" data-type="LDPE">LDPE</a>
+    <a href="#" data-type="PP">PP</a>
+    <a href="#" data-type="PVC">PVC</a>
+  </div>
+</div>
 
-  <p id="selectedType">Selected type: None</p>
+<p id="selectedType">Selected type: None</p>
 
-  <label for="volume">Annual number of units:</label>
-  <input type="number" id="volume">
+<label for="volume">Annual number of units:</label>
+<input type="number" id="volume">
+
+<button id="calcBtn">Calculate Emissions</button>
+
+<p id="result"></p>
 
   <button id="calcBtn">Calculate Emissions</button>
 
   <p id="result: "></p>
 
   <script>
-    let selectedType = "";
-    let weight = 0;
-    let factor = 0;
+let selectedType = "";
+let weight = null;
+let factor = null;
 
 document.querySelectorAll(".content a").forEach(link => {
   link.onclick = function (e) {
@@ -38,27 +43,25 @@ document.querySelectorAll(".content a").forEach(link => {
     document.querySelectorAll(".content a").forEach(a => a.classList.remove("selected"));
     this.classList.add("selected");
 
-    document.getElementById("plasticType").addEventListener("change", function () {
-      const selected = this.value;
-      document.getElementById("selectedType").textContent =
-      selected ? `Selected type: ${selected}` : "Selected type: None";
-    });
+    selectedType = this.dataset.type;
 
+    document.getElementById("selectedType").textContent = "Selected type: " + selectedType;
+    document.getElementById("dropdownButton").textContent = selectedType;
 
     if (selectedType === "PET") {
       weight = 100;
       factor = 1.91;
     } else if (selectedType === "HDPE") {
-      weight = 0;
+      weight = null;
       factor = 1.75;
     } else if (selectedType === "LDPE") {
-      weight = 0;
+      weight = null;
       factor = 1.5;
     } else if (selectedType === "PP") {
-      weight = 0;
+      weight = null;
       factor = 1.6;
     } else if (selectedType === "PVC") {
-      weight = 0;
+      weight = null;
       factor = 2.0;
     }
   };
@@ -77,10 +80,6 @@ document.getElementById("calcBtn").onclick = function () {
     result.textContent = "Estimated emissions: " + total.toFixed(2) + " kg CO₂e";
   }
 };
-
-
-  result.textContent = `Annual carbon emissions for ${volume} units of ${selectedType}: ${totalEmissions.toFixed(2)} kg CO₂e`;
-}
 </script>
   </script>
 </body>
