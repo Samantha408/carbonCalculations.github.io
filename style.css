@@ -19,7 +19,7 @@
 .dropdown .content {
   display: none;
   position: absolute;
-  background-color: hsl(0, 0%, 95%);
+  background-color: #0B4779;
   min-width: 100px;
   box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
 }
@@ -27,13 +27,13 @@
   display: block;
 }
 .dropdown:hover button {
-  background-color: hsl(0, 0%, 70%);
+  background-color: #0B4779;
 }
 .dropdown a:hover {
-  background-color: hsl(0, 0%, 90%);
+  background-color: #0B4779;
 }
 .dropdown a.selected {
-  background-color: hsl(0, 0%, 85%);
+  background-color: #0B4779;
   font-weight: bold;
   font-family: "Helvetica", sans-serif;
 }
