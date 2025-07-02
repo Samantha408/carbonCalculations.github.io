@@ -3,35 +3,35 @@
   position: relative;
 }
 .dropdown button {
-  background-color: hsl(0, 0%, 80%);
-  color: white;
+  background-color: hsl(203, 80%, 25%);
+  color: hsl(207, 72%, 82%);
   padding: 10px 15px;
   border: none;
   cursor: pointer;
 }
 .dropdown a {
   display: block;
-  color: black;
+  color: hsl(207, 72%, 82%);
   text-decoration: none;
   padding: 10px 15px;
 }
 .dropdown .content {
   display: none;
   position: absolute;
-  background-color: hsl(0, 0%, 95%);
+  background-color: hsl(207, 72%, 62%);
   min-width: 100px;
-  box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
+  box-shadow: 2px 2px 5px hsl(203, 80%, 25%);
 }
 .dropdown:hover .content {
   display: block;
 }
 .dropdown:hover button {
-  background-color: hsl(0, 0%, 70%);
+  background-color: hsl(203, 80%, 15%);
 }
 .dropdown a:hover {
-  background-color: hsl(0, 0%, 90%);
+  background-color: hsl(203, 80%, 5%);
 }
 .dropdown a.selected {
-  background-color: hsl(0, 0%, 85%);
+  background-color:	hsl(207, 72%, 95%);
   font-weight: bold;
 }
