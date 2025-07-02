@@ -3,15 +3,15 @@
   position: relative;
 }
 .dropdown button {
-  background-color: hsl(0, 0%, 80%);
-  color: white;
+  background-color: #0B4779;
+  color: #AED3F2;
   padding: 10px 15px;
   border: none;
   cursor: pointer;
 }
 .dropdown a {
   display: block;
-  color: black;
+  color: #AED3F2;
   font-family: "Helvetica", sans-serif;
   text-decoration: none;
   padding: 10px 15px;
