@@ -18,7 +18,7 @@ document.querySelectorAll(".content a").forEach(link => {
   link.addEventListener("click", function (event) {
     event.preventDefault();
     selectedType = this.dataset.type;
-    document.getElementById("selectedType").textContent = `Selected: ${selectedType}`;
+    document.getElementById("selectedType").textContent = `Selected type: ${selectedType}`;
   });
 });
 
