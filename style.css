@@ -3,23 +3,22 @@
   position: relative;
 }
 .dropdown button {
-  background-color: hsl(4.31, 27.84%, 47.45%);
-  color: hsl(68.24, 82.75%, 94.9%);
+  background-color: hsl(0, 0%, 80%);
+  color: white;
   padding: 10px 15px;
   border: none;
   cursor: pointer;
 }
 .dropdown a {
   display: block;
-  color: hsl(68.24, 82.75%, 94.9%);
-  font-family: "Helvetica", sans-serif;
+  color: black;
   text-decoration: none;
   padding: 10px 15px;
 }
 .dropdown .content {
   display: none;
   position: absolute;
-  background-color: hsl(4.31, 27.84%, 47.45%);
+  background-color: hsl(0, 0%, 95%);
   min-width: 100px;
   box-shadow: 2px 2px 5px hsla(0, 0%, 0%, 0.8);
 }
@@ -27,13 +26,12 @@
   display: block;
 }
 .dropdown:hover button {
-  background-color:  hsl(4.31, 27.84%, 47.45%);
+  background-color: hsl(0, 0%, 70%);
 }
 .dropdown a:hover {
-  background-color:  hsl(4.31, 27.84%, 47.45%);
+  background-color: hsl(0, 0%, 90%);
 }
 .dropdown a.selected {
-  background-color:  hsl(4.31, 27.84%, 47.45%);
+  background-color: hsl(0, 0%, 85%);
   font-weight: bold;
-  font-family: "Helvetica", sans-serif;
 }
