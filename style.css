@@ -1,6 +1,6 @@
 .center-container > * {
-  font-size: 2rem;        /* makes text 2x normal size */
-  padding: 2rem;          /* more space inside the element */
+  font-size: 1.5rem;        /* makes text 2x normal size */
+  padding: 1.5em;          /* more space inside the element */
   /* Optionally increase width/height as needed */
 }
 .dropdown {
