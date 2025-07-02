@@ -1,3 +1,8 @@
+.center-container > * {
+  font-size: 2rem;        /* makes text 2x normal size */
+  padding: 2rem;          /* more space inside the element */
+  /* Optionally increase width/height as needed */
+}
 .dropdown {
   display: inline-block;
   position: relative;
