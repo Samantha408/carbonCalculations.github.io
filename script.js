@@ -1,57 +1,51 @@
-<script>
-const PETw = 100;
-const PETef = 1.91;
-
-const HDPEw = null;
-const HDPEef = 1.75;
-
-const LDPEw = null;
-const LDPEef = 1.5;
-
-const PPw = null;
-const PPef = 1.6;
-
-const PVCw = null;
-const PVCef = 2.0;
+let selectedType = "";
+let weight = null;
+let factor = null;
 
 document.querySelectorAll(".content a").forEach(link => {
-  link.addEventListener("click", function (event) {
-    event.preventDefault();
+  link.onclick = function (e) {
+    e.preventDefault();
+
+    document.querySelectorAll(".content a").forEach(a => a.classList.remove("selected"));
+    this.classList.add("selected");
+
     selectedType = this.dataset.type;
-    document.getElementById("selectedType").textContent = `Selected type: ${selectedType}`;
-  });
+    document.getElementById("selectedType").textContent = "Selected type: " + selectedType;
+    document.getElementById("dropdownButton").textContent = selectedType;
+
+    if (selectedType === "PET") {
+      weight = 100;
+      factor = 1.91;
+    } else if (selectedType === "HDPE") {
+      weight = null;
+      factor = 1.75;
+    } else if (selectedType === "LDPE") {
+      weight = null;
+      factor = 1.5;
+    } else if (selectedType === "PP") {
+      weight = null;
+      factor = 1.6;
+    } else if (selectedType === "PVC") {
+      weight = null;
+      factor = 2.0;
+    }
+  };
 });
 
-function calculateEmissions() {
+document.getElementById("calcBtn").onclick = function () {
   const volume = parseFloat(document.getElementById("volume").value);
   const result = document.getElementById("result");
 
   if (!selectedType || isNaN(volume)) {
     result.textContent = "Please select a plastic type and enter number of units.";
-    return;
+  } else if (weight === null) {
+    result.textContent = "Weight for " + selectedType + " is not available yet.";
+  } else {
+    const total = weight * factor * volume;
+    result.textContent = "Estimated emissions: " + total.toFixed(2) + " kg CO₂e";
   }
+};
 
-  let weight = 0;
-  let ef = 0;
-
-  if (selectedType === "PET") {
-    weight = PETw;
-    ef = PETef;
-  } else if (selectedType === "HDPE") {
-    weight = HDPEw;
-    ef = HDPEef;
-  } else if (selectedType === "LDPE") {
-    weight = LDPEw;
-    ef = LDPEef;
-  } else if (selectedType === "PP") {
-    weight = PPw;
-    ef = PPef;
-  } else if (selectedType === "PVC") {
-    weight = PVCw;
-    ef = PVCef;
-  }
-
-  const totalEmissions = weight * ef * volume;
 
   result.textContent = `Annual carbon emissions for ${volume} units of ${selectedType}: ${totalEmissions.toFixed(2)} kg CO₂e`;
 }
