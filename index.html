@@ -7,16 +7,15 @@
 </head>
 <body>
 
-  <div class="dropdown">
-    <button id="dropdownButton">Please select the type of plastic</button>
-    <div class="content">
-      <a href="#" data-type="PET">PET</a>
-      <a href="#" data-type="HDPE">HDPE</a>
-      <a href="#" data-type="LDPE">LDPE</a>
-      <a href="#" data-type="PP">PP</a>
-      <a href="#" data-type="PVC">PVC</a>
-    </div>
-  </div>
+  <label for="plasticType">Choose a plastic type:</label>
+<select id="plasticType">
+  <option value="">--Select--</option>
+  <option value="PET">PET</option>
+  <option value="HDPE">HDPE</option>
+  <option value="PVC">PVC</option>
+  <option value="LDPE">LDPE</option>
+  <option value="PP">PP</option>
+</select>
 
   <p id="selectedType">Selected type: None</p>
 
