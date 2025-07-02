@@ -1,10 +1,10 @@
 <script>
   const emissionFactors = {
     PET: 1.91,
-    HDPE: 1.75,
-    PVC: 2.00,
-    LDPE: 1.50,
-    PP: 1.60
+    HDPE: 1.42,
+    PVC: 2.68,
+    LDPE: 1.81,
+    PP: 1.25
   };
 
   function calculateEmissions() {
